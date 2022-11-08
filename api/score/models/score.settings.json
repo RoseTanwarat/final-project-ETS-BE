@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "scores",
+  "info": {
+    "name": "Score",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "student_score": {
+      "type": "integer"
+    },
+    "student": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "scores"
+    },
+    "quiz": {
+      "via": "scores",
+      "model": "quiz"
+    }
+  }
+}

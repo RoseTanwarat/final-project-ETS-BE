@@ -6,18 +6,17 @@ module.exports = ({ env }) => ({
       settings: {
         client: "mysql",
         host: env(
-          "DATABASE_HOST"
+          "DATABASE_HOST", "127.0.0.1"
         ),
-        port: env("DATABASE_PORT", 3306),
-        database: env("DATABASE_NAME"),
-        username: env("DATABASE_USERNAME"),
-        password: env("DATABASE_PASSWORD"),
+        port: env("DATABASE_PORT", 3307),
+        database: env("DATABASE_NAME", 'final_project'),
+        username: env("DATABASE_USERNAME", 'root'),
+        password: env("DATABASE_PASSWORD", 'twrrose'),
         migrations: {
           tableName: "migrations",
         },
       },
       options: {
-        debug: env("DATABASE_DEBUG", false),
         useNullAsDefault: true,
       },
     },

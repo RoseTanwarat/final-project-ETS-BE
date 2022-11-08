@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_roles",
+  "info": {
+    "name": "userRoles",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "role_name": {
+      "type": "string"
+    },
+    "users": {
+      "via": "user_role",
+      "plugin": "users-permissions",
+      "collection": "user"
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "questions",
+  "info": {
+    "name": "Question",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "question_type": {
+      "type": "string"
+    },
+    "question_ans": {
+      "type": "text"
+    },
+    "question_name": {
+      "type": "text"
+    },
+    "question_choice1": {
+      "type": "string"
+    },
+    "question_choice2": {
+      "type": "string"
+    },
+    "question_choice3": {
+      "type": "string"
+    },
+    "question_score": {
+      "type": "integer"
+    },
+    "quiz": {
+      "via": "questions",
+      "model": "quiz"
+    },
+    "post_at": {
+      "type": "datetime"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "quizzes",
+  "info": {
+    "name": "Quiz",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "quiz_total_score": {
+      "type": "string"
+    },
+    "quiz_title": {
+      "type": "string"
+    },
+    "quiz_question": {
+      "type": "string"
+    },
+    "questions": {
+      "via": "quiz",
+      "collection": "question"
+    },
+    "scores": {
+      "collection": "score",
+      "via": "quiz"
+    },
+    "teacher": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "quizzes"
+    },
+    "quiz_status": {
+      "type": "string"
+    }
+  }
+}
